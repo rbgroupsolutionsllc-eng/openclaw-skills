@@ -23,7 +23,7 @@ The following skills from [muratcankoylan/Agent-Skills-for-Context-Engineering](
 BASE="https://raw.githubusercontent.com/muratcankoylan/Agent-Skills-for-Context-Engineering/main/skills"
 DEST="~/.openclaw/workspace/skills"
 
-for skill in context-fundamentals context-compression filesystem-context memory-systems tool-design; do
+for skill in context-fundamentals context-degradation context-compression context-optimization filesystem-context memory-systems tool-design multi-agent-patterns; do
   mkdir -p "$DEST/$skill"
   curl -sS "$BASE/$skill/SKILL.md" -o "$DEST/$skill/SKILL.md"
 done
@@ -32,10 +32,13 @@ done
 | Skill | When Kairo uses it |
 |-------|-------------------|
 | `context-fundamentals` | Design/debug agent architecture, explain context windows |
+| `context-degradation` | Agent fails on long sessions, lost-in-middle symptoms, context poisoning |
 | `context-compression` | Handle compaction events, summarize session history |
+| `context-optimization` | Token costs too high, need masking/caching/partitioning |
 | `filesystem-context` | Offload large tool outputs, plan persistence, multi-agent workspaces |
 | `memory-systems` | Choose memory framework, design knowledge graph, cross-session persistence |
 | `tool-design` | Create or audit agent tools/scripts |
+| `multi-agent-patterns` | Design subagent handoffs, orchestration, context isolation |
 
 ---
 
