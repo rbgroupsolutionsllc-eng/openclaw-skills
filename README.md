@@ -15,6 +15,28 @@ Each skill is a self-contained folder with a `SKILL.md` (the agent instruction f
 | [`session-compiler`](skills/session-compiler/) | Compile OpenClaw JSONL session logs into readable, searchable transcripts. Enables `/recall`, `/readchat`, `/searchchat`. |
 | [`backpressure`](skills/backpressure/) | Deterministic self-verification checks for agents. Run after every code or config change to catch errors before they propagate. |
 
+### Recommended companion: Agent-Skills for Context Engineering
+
+The following skills from [muratcankoylan/Agent-Skills-for-Context-Engineering](https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering) work well alongside these OpenClaw-native skills. Install them directly from that repo:
+
+```bash
+BASE="https://raw.githubusercontent.com/muratcankoylan/Agent-Skills-for-Context-Engineering/main/skills"
+DEST="~/.openclaw/workspace/skills"
+
+for skill in context-fundamentals context-compression filesystem-context memory-systems tool-design; do
+  mkdir -p "$DEST/$skill"
+  curl -sS "$BASE/$skill/SKILL.md" -o "$DEST/$skill/SKILL.md"
+done
+```
+
+| Skill | When Kairo uses it |
+|-------|-------------------|
+| `context-fundamentals` | Design/debug agent architecture, explain context windows |
+| `context-compression` | Handle compaction events, summarize session history |
+| `filesystem-context` | Offload large tool outputs, plan persistence, multi-agent workspaces |
+| `memory-systems` | Choose memory framework, design knowledge graph, cross-session persistence |
+| `tool-design` | Create or audit agent tools/scripts |
+
 ---
 
 ## Installation
