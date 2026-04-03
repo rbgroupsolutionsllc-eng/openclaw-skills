@@ -71,22 +71,6 @@ session_compiler --list
 
 ---
 
-## Why not VCC?
-
-[VCC](https://github.com/lllyasviel/VCC) is a great tool for Claude Code. These skills are purpose-built for **OpenClaw's native session format**, which differs in several ways:
-
-| | VCC (Claude Code) | openclaw-skills |
-|---|---|---|
-| Runtime | Claude Code | OpenClaw gateway |
-| Session format | Claude Code JSONL | OpenClaw JSONL (v3) |
-| Roles | `user` / `assistant` | `user` / `assistant` / `toolResult` |
-| Tool events | `tool_use` / `tool_result` inline | `toolCall` (assistant) + `toolResult` (separate role) |
-| Thinking blocks | `thinking` type | `thinking` type + `thoughtSignature` |
-| Compaction | `compaction` event | `compaction` event (same concept) |
-| Language | English | English + Spanish support |
-
----
-
 ## Contributing
 
 Skills accepted via PR. Each skill must include:
