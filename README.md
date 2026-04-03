@@ -13,6 +13,7 @@ Each skill is a self-contained folder with a `SKILL.md` (the agent instruction f
 | Skill | Description |
 |-------|-------------|
 | [`session-compiler`](skills/session-compiler/) | Compile OpenClaw JSONL session logs into readable, searchable transcripts. Enables `/recall`, `/readchat`, `/searchchat`. |
+| [`backpressure`](skills/backpressure/) | Deterministic self-verification checks for agents. Run after every code or config change to catch errors before they propagate. |
 
 ---
 
